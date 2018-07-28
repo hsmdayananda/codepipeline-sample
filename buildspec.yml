@@ -16,13 +16,15 @@ phases:
     commands:
      - curr_working_dir=`pwd`
      - echo $curr_working_dir
+     - buil_command=docker build -t sample-repo $curr_working_dir/Dockerfile
+     - echo $buil_command
 #    - aws ecr get-login --no-include-email --region ap-south-1
 
 
   build:
     commands:
 #       - mvn clean
-       - docker build -t sample-repo $curr_working_dir /Dockerfile
+       -$buil_command
   post_build:
     commands:
       - docker tag sample-repo:latest 248944429617.dkr.ecr.ap-south-1.amazonaws.com/sample-repo:latest
