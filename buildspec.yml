@@ -22,7 +22,7 @@ phases:
   build:
     commands:
 #       - mvn clean
-       - docker build -t sample-repo /codebuild/output/src374090974/src/Dockerfile
+       - docker build -t sample-repo $curr_working_dir/Dockerfile
   post_build:
     commands:
       - docker tag sample-repo:latest 248944429617.dkr.ecr.ap-south-1.amazonaws.com/sample-repo:latest
