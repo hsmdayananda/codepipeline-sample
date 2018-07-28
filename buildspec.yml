@@ -15,7 +15,7 @@ phases:
   pre_build:
     commands:
      - curr_working_dir=`pwd`
-     echo $curr_working_dir
+     - echo $curr_working_dir
 #    - aws ecr get-login --no-include-email --region ap-south-1
 
 
