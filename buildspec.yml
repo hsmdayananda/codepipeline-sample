@@ -8,7 +8,7 @@ phases:
 
   build:
     commands:
-       - mvn clean install
+       - mvn clean
        - docker build -t sample-repo .
   post_build:
     commands:
