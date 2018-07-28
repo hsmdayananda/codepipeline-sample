@@ -14,14 +14,14 @@ phases:
 
   pre_build:
     commands:
-      PATH: pwd
+     - curr_working_dir=`pwd`
 #    - aws ecr get-login --no-include-email --region ap-south-1
 
 
   build:
     commands:
 #       - mvn clean
-       - docker build -t sample-repo $PATH
+       - docker build -t sample-repo $curr_working_dir/Dockerfile
   post_build:
     commands:
       - docker tag sample-repo:latest 248944429617.dkr.ecr.ap-south-1.amazonaws.com/sample-repo:latest
