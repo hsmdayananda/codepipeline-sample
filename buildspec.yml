@@ -17,7 +17,8 @@ phases:
     commands:
 
 
-      - eval $(aws ecr get-login | sed 's|https://||')
+#      - aws ecr get-login --no-include-email --region ap-south-1
+      - $(aws ecr get-login --region ap-south-1)
 
 
   build:
