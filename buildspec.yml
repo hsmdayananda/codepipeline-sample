@@ -2,14 +2,17 @@
 version: 0.2
 
 phases:
-  build:
+    pre_build:
+        commands:
+          - aws ecr get-login --no-include-email --region ap-south-1
+
+    build:
     commands:
        - echo Entered the build phase...
        - echo Build started on `date`
        - mvn install
+       - docker build -t sample-repo .
   post_build:
     commands:
-      - echo "Build completed"
-#artifacts:
-#  files:
-#    - my_output_file
+      - docker tag sample-repo:latest 248944429617.dkr.ecr.ap-south-1.amazonaws.com/sample-repo:latest
+      - docker push 248944429617.dkr.ecr.ap-south-1.amazonaws.com/sample-repo:latest
