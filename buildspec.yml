@@ -16,7 +16,7 @@ phases:
     commands:
      - curr_working_dir=`pwd`
      - echo $curr_working_dir
-     - buil_command=docker build -t sample-repo $curr_working_dir/Dockerfile
+     - buil_command="docker build -t sample-repo" $curr_working_dir "/Dockerfile"
      - echo $buil_command
 #    - aws ecr get-login --no-include-email --region ap-south-1
 
