@@ -7,8 +7,10 @@ phases:
       - echo Entered the install phase...
       - apt-get update -y
       - apt-get install -y maven
-      - sudo yum update -y
-      - yum install -y docker
+      - curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+      - python get-pip.py
+      - pip install docker-compose
+
   pre_build:
     commands:
 #    - aws ecr get-login --no-include-email --region ap-south-1
