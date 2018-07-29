@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: codePipeline
+server:
+  port: 8080
