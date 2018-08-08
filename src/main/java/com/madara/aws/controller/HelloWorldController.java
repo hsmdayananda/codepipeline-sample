@@ -14,6 +14,6 @@ public class HelloWorldController {
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     public String test() {
-        return "Hello H Madara";
+        return "Hello Hasini Madara";
     }
 }
