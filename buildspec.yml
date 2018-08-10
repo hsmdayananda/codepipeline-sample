@@ -7,6 +7,13 @@ phases:
   install:
     commands:
       - echo Entered the install phase...
+      - yum install java-1.8.0-openjdk -y
+      - wget http://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+      - tar -xf apache-maven-3.3.9-bin.tar.gz
+      - mv apache-maven-3.3.9 /opt
+      - export PATH=/opt/apache-maven-3.3.9/bin:$PATH
+      - source /etc/bashrc
+      - echo mvn -version
       - apt-get update -y
       - apt-get install -y maven
       - curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
@@ -24,7 +31,7 @@ phases:
   build:
     commands:
        - mvn clean
-#        - docker build -t sample-repo .
+       - docker build -t sample-repo .
   post_build:
     commands:
       - docker tag sample-repo:latest 248944429617.dkr.ecr.ap-south-1.amazonaws.com/sample-repo:latest
