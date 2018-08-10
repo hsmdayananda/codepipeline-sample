@@ -27,5 +27,5 @@ phases:
 #       - docker build -t sample-repo .
   post_build:
     commands:
-      - docker tag sample-repo:latest 248944429617.dkr.ecr.ap-south-1.amazonaws.com/sample-repo:latest
-      - docker push 248944429617.dkr.ecr.ap-south-1.amazonaws.com/sample-repo:latest
+#      - docker tag sample-repo:latest 248944429617.dkr.ecr.ap-south-1.amazonaws.com/sample-repo:latest
+#      - docker push 248944429617.dkr.ecr.ap-south-1.amazonaws.com/sample-repo:latest
